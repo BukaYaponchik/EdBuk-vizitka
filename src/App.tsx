@@ -5,13 +5,13 @@ import ContactForm from './components/ContactForm/ContactForm';
 import './App.css';
 
 function App() {
-  return (
-      <div className="App">
-        <Header />
-        <Features />
-        <ContactForm />
-      </div>
-  );
+    return (
+        <div className="App">
+            <Header />
+            <Features />
+            <ContactForm />
+        </div>
+    );
 }
 
 export default App;

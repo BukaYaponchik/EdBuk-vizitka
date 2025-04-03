@@ -1,12 +1,17 @@
 :root {
-  --dark-bg: #1a1a1a;
-  --accent-color: #8a2be2;
+  --dark-bg: #121212;
+  --darker-bg: #0a0a0a;
+  --card-bg: #1e1e1e;
+  --accent-color: #6a42f4;
+  --accent-hover: #7e5af5;
   --text-color: #ffffff;
+  --text-secondary: #b0b0b0;
+  --border-color: #2c2c2c;
 }
 
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Poppins', 'Arial', sans-serif;
   background-color: var(--dark-bg);
   color: var(--text-color);
   line-height: 1.6;
@@ -16,4 +21,29 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin-top: 0;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  padding: 5rem 0;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--accent-hover);
 }
