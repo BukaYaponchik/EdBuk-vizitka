@@ -1,0 +1,16 @@
+.header {
+    text-align: center;
+    padding: 4rem 0;
+    border-bottom: 1px solid #333;
+}
+
+.tagline {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.contacts {
+    margin-top: 2rem;
+    opacity: 0.9;
+}
