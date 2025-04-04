@@ -1,12 +1,15 @@
 :root {
   --dark-bg: #121212;
   --darker-bg: #0a0a0a;
-  --card-bg: #1e1e1e;
-  --accent-color: #6a42f4;
-  --accent-hover: #7e5af5;
+  --card-bg: #1d1530;
+  --accent-color: #9c27b0;
+  --accent-hover: #b52fd3;
   --text-color: #ffffff;
   --text-secondary: #b0b0b0;
-  --border-color: #2c2c2c;
+  --border-color: #3d1f5d;
+  --gradient-start: #6a02c9;
+  --gradient-end: #9c27b0;
+  --card-glow: rgba(156, 39, 176, 0.15);
 }
 
 body {
@@ -36,6 +39,7 @@ h1, h2, h3, h4, h5, h6 {
 
 section {
   padding: 5rem 0;
+  position: relative;
 }
 
 a {
@@ -46,4 +50,18 @@ a {
 
 a:hover {
   color: var(--accent-hover);
+}
+
+/* Add a subtle animated background gradient to the app */
+.App::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 10% 10%, rgba(106, 2, 201, 0.03), transparent 40%),
+  radial-gradient(circle at 90% 90%, rgba(156, 39, 176, 0.03), transparent 40%);
+  z-index: -1;
+  pointer-events: none;
 }
