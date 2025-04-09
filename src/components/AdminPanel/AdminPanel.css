@@ -83,7 +83,7 @@
 }
 
 .requests-list {
-  background-color: #f5f7fa; /* Changed background color */
+  background-color: #f5f7fa;
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -143,10 +143,11 @@
   line-height: 1.5;
   overflow-wrap: break-word;
   word-wrap: break-word;
+  color: #2d3748;
 }
 
 .request-details {
-  background-color: #f5f7fa; /* Changed background color */
+  background-color: #f5f7fa;
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
