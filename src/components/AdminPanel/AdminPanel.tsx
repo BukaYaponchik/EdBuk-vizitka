@@ -19,7 +19,7 @@ const AdminPanel: React.FC = () => {
   const [isAuthorized, setIsAuthorized] = useState(false);
   const [selectedRequest, setSelectedRequest] = useState<RequestData | null>(null);
 
-  const ADMIN_PASSWORD = 'admin123SSSR';
+  const ADMIN_PASSWORD = 'wehx4BFyf*fl9AYcA~Kg';
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -101,101 +101,101 @@ const AdminPanel: React.FC = () => {
 
   if (!isAuthorized) {
     return (
-      <div className="admin-login">
-        <div className="admin-login-container">
-          <h2>Вход в панель администратора</h2>
-          {error && <div className="error-message">{error}</div>}
-          <form onSubmit={handleLogin}>
-            <div className="form-group">
-              <label htmlFor="password">Пароль</label>
-              <input
-                type="password"
-                id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-            </div>
-            <button type="submit" className="admin-button">Войти</button>
-          </form>
+        <div className="admin-login">
+          <div className="admin-login-container">
+            <h2>Вход в панель администратора</h2>
+            {error && <div className="error-message">{error}</div>}
+            <form onSubmit={handleLogin}>
+              <div className="form-group">
+                <label htmlFor="password">Пароль</label>
+                <input
+                    type="password"
+                    id="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                />
+              </div>
+              <button type="submit" className="admin-button">Войти</button>
+            </form>
+          </div>
         </div>
-      </div>
     );
   }
 
   return (
-    <div className="admin-panel">
-      <div className="admin-header">
-        <h2>Панель администратора</h2>
-        <button onClick={handleLogout} className="logout-button">Выйти</button>
-      </div>
+      <div className="admin-panel">
+        <div className="admin-header">
+          <h2>Панель администратора</h2>
+          <button onClick={handleLogout} className="logout-button">Выйти</button>
+        </div>
 
-      {error && <div className="error-message">{error}</div>}
+        {error && <div className="error-message">{error}</div>}
 
-      <div className="admin-content">
-        <div className="requests-list">
-          <h3>Список заявок ({requests.length})</h3>
+        <div className="admin-content">
+          <div className="requests-list">
+            <h3>Список заявок ({requests.length})</h3>
 
-          {loading ? (
-            <div className="loading">Загрузка заявок...</div>
-          ) : requests.length === 0 ? (
-            <div className="empty-message">Нет новых заявок</div>
-          ) : (
-            <ul>
-              {requests.map(request => (
-                <li
-                  key={request.id}
-                  className={selectedRequest?.id === request.id ? 'selected' : ''}
-                  onClick={() => setSelectedRequest(request)}
-                >
-                  <div className="request-list-item">
-                    <div>
-                      <strong>{request.name}</strong>
-                      <div className="request-date">{formatDate(request.date)}</div>
-                    </div>
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        deleteRequest(request.id);
-                      }}
-                      className="delete-button"
-                    >
-                      Удалить
+            {loading ? (
+                <div className="loading">Загрузка заявок...</div>
+            ) : requests.length === 0 ? (
+                <div className="empty-message">Нет новых заявок</div>
+            ) : (
+                <ul>
+                  {requests.map(request => (
+                      <li
+                          key={request.id}
+                          className={selectedRequest?.id === request.id ? 'selected' : ''}
+                          onClick={() => setSelectedRequest(request)}
+                      >
+                        <div className="request-list-item">
+                          <div>
+                            <strong>{request.name}</strong>
+                            <div className="request-date">{formatDate(request.date)}</div>
+                          </div>
+                          <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                deleteRequest(request.id);
+                              }}
+                              className="delete-button"
+                          >
+                            Удалить
+                          </button>
+                        </div>
+                      </li>
+                  ))}
+                </ul>
+            )}
+          </div>
+
+          <div className="request-details">
+            {selectedRequest ? (
+                <div className="request-card">
+                  <h3>Детали заявки</h3>
+                  <div className="request-info">
+                    <p><strong>Дата:</strong> {formatDate(selectedRequest.date)}</p>
+                    <p><strong>Имя:</strong> {selectedRequest.name}</p>
+                    <p><strong>Email:</strong> <a href={`mailto:${selectedRequest.email}`}>{selectedRequest.email}</a></p>
+                    <p><strong>Телефон:</strong> <a href={`tel:${selectedRequest.phone}`}>{selectedRequest.phone}</a></p>
+                    <p><strong>Компания:</strong> {selectedRequest.company}</p>
+                    <p><strong>Сообщение:</strong></p>
+                    <div className="message-content">{selectedRequest.message}</div>
+                  </div>
+                  <div className="request-actions">
+                    <button onClick={() => deleteRequest(selectedRequest.id)} className="delete-button">
+                      Удалить заявку
                     </button>
                   </div>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-
-        <div className="request-details">
-          {selectedRequest ? (
-            <div className="request-card">
-              <h3>Детали заявки</h3>
-              <div className="request-info">
-                <p><strong>Дата:</strong> {formatDate(selectedRequest.date)}</p>
-                <p><strong>Имя:</strong> {selectedRequest.name}</p>
-                <p><strong>Email:</strong> <a href={`mailto:${selectedRequest.email}`}>{selectedRequest.email}</a></p>
-                <p><strong>Телефон:</strong> <a href={`tel:${selectedRequest.phone}`}>{selectedRequest.phone}</a></p>
-                <p><strong>Компания:</strong> {selectedRequest.company}</p>
-                <p><strong>Сообщение:</strong></p>
-                <div className="message-content">{selectedRequest.message}</div>
-              </div>
-              <div className="request-actions">
-                <button onClick={() => deleteRequest(selectedRequest.id)} className="delete-button">
-                  Удалить заявку
-                </button>
-              </div>
-            </div>
-          ) : (
-            <div className="no-selection">
-              <p>Выберите заявку из списка для просмотра деталей</p>
-            </div>
-          )}
+                </div>
+            ) : (
+                <div className="no-selection">
+                  <p>Выберите заявку из списка для просмотра деталей</p>
+                </div>
+            )}
+          </div>
         </div>
       </div>
-    </div>
   );
 };
 
