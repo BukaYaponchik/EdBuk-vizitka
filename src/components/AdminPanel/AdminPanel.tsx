@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './AdminPanel.css';
+import { Helmet } from 'react-helmet-async';
 
 interface RequestData {
   id: string;
@@ -125,6 +126,12 @@ const AdminPanel: React.FC = () => {
 
   return (
       <div className="admin-panel">
+        <Helmet>
+          <title>Админ-панель | EdBuk</title>
+          <meta name="robots" content="noindex, nofollow" />
+          <meta name="googlebot" content="noindex, nofollow" />
+          <meta name="yandex" content="none" />
+        </Helmet>
         <div className="admin-header">
           <h2>Панель администратора</h2>
           <button onClick={handleLogout} className="logout-button">Выйти</button>

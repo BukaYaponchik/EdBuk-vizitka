@@ -1,0 +1,87 @@
+.websites-features,
+.websites-services {
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.websites-features::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(23, 129, 250, 0.2) 0%, rgba(10, 27, 89, 0) 70%);
+    border-radius: 50%;
+    z-index: -1;
+    animation: float 10s ease-in-out infinite;
+}
+
+.websites-features::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(88, 58, 255, 0.15) 0%, rgba(10, 27, 89, 0) 70%);
+    border-radius: 50%;
+    z-index: -1;
+    animation: float 15s ease-in-out infinite reverse;
+}
+
+.websites-services {
+    background-color: rgba(16, 23, 41, 0.6);
+    background-image: linear-gradient(
+        to bottom,
+        rgba(16, 23, 41, 0) 0%,
+        rgba(16, 23, 41, 0.8) 50%,
+        rgba(16, 23, 41, 0) 100%
+    );
+}
+
+.websites-features h2,
+.websites-services h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #23a6f0, #5664fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.websites-features h2::after,
+.websites-services h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #23a6f0, #5664fe);
+    border-radius: 3px;
+}
+
+/* Additional styling for service icons in this section */
+.websites-services .service-icon {
+    background: linear-gradient(135deg, #23a6f0, #5664fe);
+}
+
+/* Animation for glow effect */
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+}
