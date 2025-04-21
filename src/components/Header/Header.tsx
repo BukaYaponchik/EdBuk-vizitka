@@ -1,5 +1,6 @@
 import React from 'react';
 import './Header.css';
+import SectionToggle from '../SectionToggle/SectionToggle';
 
 interface HeaderProps {
     isWebsitesPage?: boolean;
@@ -10,6 +11,9 @@ const Header: React.FC<HeaderProps> = ({ isWebsitesPage = false }) => {
         <header className="header">
             <div className="header-content container">
                 <div className="logo">EdBuk</div>
+                <div className="header-middle">
+                    <SectionToggle activeSection={isWebsitesPage ? 'websites' : 'platform'} />
+                </div>
                 <nav className="nav-menu">
                     <a href="#features">Преимущества</a>
                     <a href="#services">Услуги</a>
