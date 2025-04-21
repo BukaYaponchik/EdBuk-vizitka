@@ -2,7 +2,6 @@ import React from 'react';
 import Header from './Header/Header';
 import Websites from './Websites/Websites';
 import ContactForm from './ContactForm/ContactForm';
-import SectionToggle from './SectionToggle/SectionToggle';
 import SEO from './SEO/SEO';
 
 const WebsitesPage: React.FC = () => {
@@ -67,9 +66,6 @@ const WebsitesPage: React.FC = () => {
                 structuredData={structuredData}
             />
             <Header isWebsitesPage={true} />
-            <div className="toggle-container container">
-                <SectionToggle activeSection="websites" />
-            </div>
             <Websites />
             <ContactForm />
         </>

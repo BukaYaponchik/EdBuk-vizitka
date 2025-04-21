@@ -96,7 +96,7 @@ const ContactForm: React.FC = () => {
                         </div>
 
                         <div className="social-links">
-                            <a href="https://t.me/@bukovysovmaks" className="social-link">
+                            <a href="https://t.me/bukovysovmaks" className="social-link">
                                 <span className="social-link-text">Telegram</span>
                             </a>
                             <a href="https://wa.me/79066078097" className="social-link">
